@@ -22,8 +22,12 @@ var PORT = 3000;
 var app = express();
 
 // Set Handlebars as the default templating engine.
-// app.engine("handlebars", exphbs({ defaultLayout: "index" }));
-// app.set("view engine", "handlebars");
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 
 // Configure middleware
 
@@ -71,7 +75,7 @@ app.get("/scrape", function (req, res) {
 
         console.log("Printing Scrape Data!:", result.title, result.link);
 
-        // Create a new Article using the `resule` object built from scraping
+        // Create a new Article using the `result` object built from scraping
         db.Article.create(result)
           .then(function (dbArticle) {
             // View the added turnstileLink in the console
@@ -105,6 +109,14 @@ app.get("/articles", function (req, res) {
 
 
 // Route for grabbing a specific Article by id, populate it with it's note
+
+app.get("/", function (req, res) {
+  db.Article.find({}).then(function(articles){
+    res.render("index", {articles: articles});
+  })
+  
+
+})
 app.get("/articles/:id", function (req, res) {
 
   db.Article.findOne({ _id: req.params.id })
