@@ -8,6 +8,24 @@ This app goes to zip recuriter website and scrapes all the jobs that are availab
 
 Once user clicks on any displayed job, it opens a window where addition notes could be enter and referenced letter (still working on this part).
  
+Source code
+1. Models
+    Article.js
+    index.js
+    Note.js
+2. Public
+    app.js
+3. views
+    index.handlebars
+    layouts
+        main.handlebars
+4. server.js
+5. key NPM packages.
+    Express, express-handlebars, mongoose, cheerio, axios.
+
+
+
+
 
 Author: Jayanti Singh
 BootCamp -- 2018
