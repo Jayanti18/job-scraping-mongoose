@@ -2,7 +2,7 @@
 Scraping for job opening using mongoose
 
 
-
+##
 Use Cheerio to grab the site content and Mongoose to save it to your MongoDB database. 
 This app goes to zip recuriter website and scrapes all the jobs that are available for the matching parameters of(Job = web develober) in concord NC with in 25miles of radius. 
 
@@ -23,9 +23,5 @@ Source code
 5. key NPM packages.
     Express, express-handlebars, mongoose, cheerio, axios.
 
-
-
-
-
-Author: Jayanti Singh
-BootCamp -- 2018
+#Author: Jayanti Singh
+#BootCamp -- 2018
