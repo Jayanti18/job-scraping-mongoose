@@ -114,9 +114,8 @@ app.get("/", function (req, res) {
   db.Article.find({}).then(function(articles){
     res.render("index", {articles: articles});
   })
-  
-
 })
+
 app.get("/articles/:id", function (req, res) {
 
   db.Article.findOne({ _id: req.params.id })
